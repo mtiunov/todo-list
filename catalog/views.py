@@ -29,3 +29,20 @@ class TagListView(generic.ListView):
     model = Tag
     context_object_name = "tag_list"
     template_name = "catalog/tag_list.html"
+
+
+class TagCreateView(generic.CreateView):
+    model = Tag
+    fields = "__all__"
+    success_url = reverse_lazy("catalog/tag_list.html")
+
+
+class TagUpdateView(generic.UpdateView):
+    model = Tag
+    fields = "__all__"
+    success_url = reverse_lazy("catalog/tag_list.html")
+
+
+class TagDeleteView(generic.DeleteView):
+    model = Tag
+    success_url = reverse_lazy("catalog/tag_list.html")
