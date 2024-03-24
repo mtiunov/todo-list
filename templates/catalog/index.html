@@ -9,7 +9,7 @@
 <div class="ml">
   {% for task in tasks %}
 
-  <p><strong> {{ task.content }} </strong></p>
+  <p><strong> {{ task.content }}{% if task.is_completed %}<span class="text-success"> Done </span>{% else %}<span class="text-danger"> Not done </span>{% endif %}</strong></p>
   <p><strong>Created:</strong> {{ task.published_date }} </p>
   <div class="text-muted"><strong>Tags:</strong>
     {% for tag in task.tags.all %}
