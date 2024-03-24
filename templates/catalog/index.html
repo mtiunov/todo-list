@@ -28,15 +28,15 @@
   <p><strong>Created:</strong> {{ task.published_date }} </p>
   <div class="text-muted"><strong>Tags:</strong>
     {% for tag in task.tags.all %}
-    <span>{{ tag.name }}</span>{% if not forloop.last %}, {% endif %}
+      <span>{{ tag.name }}</span>{% if not forloop.last %}, {% endif %}
+    {% endfor %}
     <a href="{% url 'catalog:task-update' pk=task.id %}">Update</a>
     <a href="{% url 'catalog:task-delete' pk=task.id %}">Delete</a>
-    {% endfor %}
   </div>
   <hr>
-  {% empty %}
+ {% empty %}
   <p>No TODO List!</p>
-  {% endfor %}
+ {% endfor %}
 </div>
 
 {% endblock content %}

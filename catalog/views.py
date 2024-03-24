@@ -22,18 +22,18 @@ def index(request):
 class TaskCreateView(generic.CreateView):
     model = Task
     fields = "__all__"
-    success_url = reverse_lazy("index")
+    success_url = reverse_lazy("catalog:index")
 
 
 class TaskUpdateView(generic.UpdateView):
     model = Task
     fields = "__all__"
-    success_url = reverse_lazy("index")
+    success_url = reverse_lazy("catalog:index")
 
 
 class TaskDeleteView(generic.DeleteView):
     model = Task
-    success_url = reverse_lazy("index")
+    success_url = reverse_lazy("catalog:index")
 
 
 class TagListView(generic.ListView):
@@ -45,18 +45,18 @@ class TagListView(generic.ListView):
 class TagCreateView(generic.CreateView):
     model = Tag
     fields = "__all__"
-    success_url = reverse_lazy("catalog/tag_list.html")
+    success_url = reverse_lazy("catalog:tag-list")
 
 
 class TagUpdateView(generic.UpdateView):
     model = Tag
     fields = "__all__"
-    success_url = reverse_lazy("catalog/tag_list.html")
+    success_url = reverse_lazy("catalog:tag-list")
 
 
 class TagDeleteView(generic.DeleteView):
     model = Tag
-    success_url = reverse_lazy("catalog/tag_list.html")
+    success_url = reverse_lazy("catalog:tag-list")
 
 
 class TaskCompleteView(generic.View):
