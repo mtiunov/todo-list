@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views import generic
 from .models import Task, Tag
 
@@ -16,6 +17,12 @@ def index(request):
     }
 
     return render(request, "catalog/index.html", context=context)
+
+
+class TaskCreateView(generic.CreateView):
+    model = Task
+    fields = "__all__"
+    success_url = reverse_lazy("index")
 
 
 class TagListView(generic.ListView):

@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>TODO List</h1>
+<h1>TODO List
+  <a href="{% url 'catalog:task-create' %}" class="btn btn-primary link-to-page">
+      Add task
+    </a>
+</h1>
 <div class="ml">
   {% for task in tasks %}
 
