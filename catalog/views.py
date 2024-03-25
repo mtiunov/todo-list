@@ -59,17 +59,9 @@ class TagDeleteView(generic.DeleteView):
     success_url = reverse_lazy("catalog:tag-list")
 
 
-class TaskCompleteView(generic.View):
+class TaskStatusView(generic.View):
     def post(self, request, pk):
         task = get_object_or_404(Task, pk=pk)
-        task.is_completed = True
-        task.save()
-        return redirect("catalog:index")
-
-
-class TaskUndoView(generic.View):
-    def post(self, request, pk):
-        task = get_object_or_404(Task, pk=pk)
-        task.is_completed = False
+        task.is_completed = not task.is_completed
         task.save()
         return redirect("catalog:index")
