@@ -24,12 +24,12 @@ If you want to help in the development of the project, please create a request p
 
 ## Demo
 
-![Website Interface](demo_1.png)
-![Website Interface](demo_2.png)
-![Website Interface](demo_3.png)
-![Website Interface](demo_4.png)
-![Website Interface](demo_5.png)
-![Website Interface](demo_6.png)
+![Website Interface](demo/demo_1.png)
+![Website Interface](demo/demo_2.png)
+![Website Interface](demo/demo_3.png)
+![Website Interface](demo/demo_4.png)
+![Website Interface](demo/demo_5.png)
+![Website Interface](demo/demo_6.png)
 
 ## Author
 
